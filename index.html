@@ -1,1154 +1,319 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>先制医療推進機構 | 代理店パートナー募集</title>
-    <meta name="description" content="がんを「見つけてから治す」時代から「見つかる前に守る」時代へ。先制医療推進機構の代理店パートナーとして、新しい医療の仕組みを広めませんか？">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
-        rel="stylesheet">
-    <style>
-        *,
-        *::before,
-        *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box
-        }
-
-        :root {
-            --primary: #0a1628;
-            --primary-light: #132240;
-            --accent: #00b4d8;
-            --accent-glow: #00e5ff;
-            --gold: #f0c040;
-            --white: #ffffff;
-            --gray: #94a3b8;
-            --light-bg: #f0f4f8;
-            --gradient-hero: linear-gradient(135deg, #0a1628 0%, #1a2d50 50%, #0d2137 100%);
-            --gradient-accent: linear-gradient(135deg, #00b4d8, #0077b6);
-            --gradient-gold: linear-gradient(135deg, #f0c040, #e8a820);
-            --section-padding: 80px 0;
-            --container: 1100px;
-            --font: 'Noto Sans JP', sans-serif;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px
-        }
-
-        body {
-            font-family: var(--font);
-            color: #1e293b;
-            line-height: 1.8;
-            overflow-x: hidden
-        }
-
-        /* Utility */
-        .container {
-            max-width: var(--container);
-            margin: 0 auto;
-            padding: 0 24px
-        }
-
-        .section {
-            padding: var(--section-padding)
-        }
-
-        .section-title {
-            font-size: 2rem;
-            font-weight: 900;
-            text-align: center;
-            margin-bottom: 16px;
-            letter-spacing: -.02em
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--gray);
-            font-size: 1.05rem;
-            margin-bottom: 48px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 16px 40px;
-            border-radius: 60px;
-            font-weight: 700;
-            font-size: 1.05rem;
-            text-decoration: none;
-            transition: all .3s ease;
-            cursor: pointer;
-            border: none
-        }
-
-        .btn-primary {
-            background: var(--gradient-accent);
-            color: #fff;
-            box-shadow: 0 4px 20px rgba(0, 180, 216, .35)
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(0, 180, 216, .5)
-        }
-
-        .btn-gold {
-            background: var(--gradient-gold);
-            color: #1a1a1a;
-            box-shadow: 0 4px 20px rgba(240, 192, 64, .35)
-        }
-
-        .btn-gold:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(240, 192, 64, .5)
-        }
-
-        .highlight {
-            color: var(--accent);
-            font-weight: 700
-        }
-
-        .gold {
-            color: var(--gold);
-            font-weight: 700
-        }
-
-        /* ============ HERO ============ */
-        .hero {
-            background: var(--gradient-hero);
-            color: #fff;
-            padding: 120px 0 100px;
-            position: relative;
-            overflow: hidden;
-            min-height: 90vh;
-            display: flex;
-            align-items: center
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(0, 180, 216, .12), transparent 70%);
-            top: -200px;
-            right: -100px
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(240, 192, 64, .08), transparent 70%);
-            bottom: -100px;
-            left: -50px
-        }
-
-        .hero .container {
-            position: relative;
-            z-index: 1;
-            text-align: center
-        }
-
-        .hero-badge {
-            display: inline-block;
-            padding: 6px 20px;
-            border: 1px solid rgba(0, 180, 216, .4);
-            border-radius: 30px;
-            font-size: .85rem;
-            color: var(--accent);
-            margin-bottom: 24px;
-            letter-spacing: .05em
-        }
-
-        .hero h1 {
-            font-size: clamp(2rem, 5vw, 3.2rem);
-            font-weight: 900;
-            line-height: 1.3;
-            margin-bottom: 24px
-        }
-
-        .hero h1 .accent-line {
-            display: block;
-            background: linear-gradient(90deg, var(--accent), var(--accent-glow));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text
-        }
-
-        .hero p {
-            font-size: 1.15rem;
-            color: rgba(255, 255, 255, .75);
-            max-width: 640px;
-            margin: 0 auto 40px;
-            line-height: 1.9
-        }
-
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 48px;
-            margin-top: 56px;
-            flex-wrap: wrap
-        }
-
-        .hero-stat {
-            text-align: center
-        }
-
-        .hero-stat .num {
-            font-size: 2.4rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, var(--accent), var(--gold));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text
-        }
-
-        .hero-stat .label {
-            font-size: .85rem;
-            color: rgba(255, 255, 255, .55);
-            margin-top: 4px
-        }
-
-        /* ============ PROBLEM ============ */
-        .problem {
-            background: var(--light-bg)
-        }
-
-        .problem-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center
-        }
-
-        .problem-visual {
-            background: var(--primary);
-            border-radius: 20px;
-            padding: 48px 32px;
-            color: #fff;
-            text-align: center
-        }
-
-        .problem-flow {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            align-items: center
-        }
-
-        .problem-flow .step {
-            background: rgba(255, 255, 255, .08);
-            border: 1px solid rgba(255, 255, 255, .1);
-            border-radius: 12px;
-            padding: 14px 24px;
-            width: 100%;
-            font-size: .95rem;
-            display: flex;
-            align-items: center;
-            gap: 12px
-        }
-
-        .problem-flow .step .icon {
-            font-size: 1.4rem
-        }
-
-        .problem-flow .arrow {
-            color: var(--gray);
-            font-size: 1.2rem
-        }
-
-        .problem-flow .step-bad {
-            border-color: rgba(239, 68, 68, .4);
-            background: rgba(239, 68, 68, .1)
-        }
-
-        .problem-flow .step-bad .icon {
-            color: #ef4444
-        }
-
-        .problem-text h3 {
-            font-size: 1.6rem;
-            font-weight: 700;
-            margin-bottom: 16px;
-            color: var(--primary)
-        }
-
-        .problem-text p {
-            color: #475569;
-            margin-bottom: 16px
-        }
-
-        .problem-text .stat-box {
-            background: #fff;
-            border-radius: 16px;
-            padding: 24px;
-            margin-top: 24px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, .06)
-        }
-
-        .problem-text .stat-box .big-num {
-            font-size: 2.8rem;
-            font-weight: 900;
-            color: #ef4444
-        }
-
-        /* ============ SOLUTION ============ */
-        .solution {
-            background: var(--gradient-hero);
-            color: #fff
-        }
-
-        .solution .section-subtitle {
-            color: rgba(255, 255, 255, .6)
-        }
-
-        .solution-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 28px
-        }
-
-        .solution-card {
-            background: rgba(255, 255, 255, .06);
-            border: 1px solid rgba(255, 255, 255, .1);
-            border-radius: 20px;
-            padding: 36px 28px;
-            text-align: center;
-            transition: all .3s ease
-        }
-
-        .solution-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(0, 180, 216, .4);
-            box-shadow: 0 8px 40px rgba(0, 180, 216, .15)
-        }
-
-        .solution-card .card-icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 16px;
-            background: var(--gradient-accent);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            margin: 0 auto 20px
-        }
-
-        .solution-card h3 {
-            font-size: 1.15rem;
-            font-weight: 700;
-            margin-bottom: 12px
-        }
-
-        .solution-card p {
-            font-size: .92rem;
-            color: rgba(255, 255, 255, .65);
-            line-height: 1.8
-        }
-
-        .solution-compare {
-            margin-top: 56px;
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
-            gap: 24px;
-            align-items: center
-        }
-
-        .compare-box {
-            border-radius: 20px;
-            padding: 36px 28px;
-            text-align: center
-        }
-
-        .compare-old {
-            background: rgba(239, 68, 68, .1);
-            border: 1px solid rgba(239, 68, 68, .3)
-        }
-
-        .compare-new {
-            background: rgba(0, 180, 216, .1);
-            border: 1px solid rgba(0, 180, 216, .3)
-        }
-
-        .compare-box h4 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 8px
-        }
-
-        .compare-box p {
-            font-size: .9rem;
-            color: rgba(255, 255, 255, .65)
-        }
-
-        .compare-arrow {
-            font-size: 2rem;
-            color: var(--accent)
-        }
-
-        /* ============ CASHBACK ============ */
-        .cashback {
-            background: linear-gradient(135deg, #fffbeb, #fef3c7)
-        }
-
-        .cashback-content {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto
-        }
-
-        .cashback-badge {
-            display: inline-block;
-            background: var(--gradient-gold);
-            color: #1a1a1a;
-            padding: 8px 28px;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 1rem;
-            margin-bottom: 24px
-        }
-
-        .cashback h2 {
-            font-size: 2.2rem;
-            font-weight: 900;
-            margin-bottom: 16px;
-            color: #78350f
-        }
-
-        .cashback-flow {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 16px;
-            margin: 40px 0;
-            flex-wrap: wrap
-        }
-
-        .cashback-step {
-            background: #fff;
-            border-radius: 16px;
-            padding: 24px 20px;
-            text-align: center;
-            min-width: 160px;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, .06)
-        }
-
-        .cashback-step .step-icon {
-            font-size: 2rem;
-            margin-bottom: 8px
-        }
-
-        .cashback-step .step-label {
-            font-size: .85rem;
-            color: #92400e;
-            font-weight: 500
-        }
-
-        .cashback-step .step-value {
-            font-size: 1.3rem;
-            font-weight: 900;
-            color: #78350f
-        }
-
-        .cashback-arrow {
-            font-size: 1.5rem;
-            color: #d97706
-        }
-
-        /* ============ SERVICES ============ */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 28px
-        }
-
-        .service-card {
-            background: #fff;
-            border-radius: 20px;
-            padding: 36px 28px;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, .06);
-            border: 1px solid #e2e8f0;
-            transition: all .3s ease;
-            text-align: center
-        }
-
-        .service-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, .1)
-        }
-
-        .service-card .service-icon {
-            width: 72px;
-            height: 72px;
-            border-radius: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            margin: 0 auto 20px
-        }
-
-        .service-card:nth-child(1) .service-icon {
-            background: linear-gradient(135deg, #fce4ec, #f8bbd0)
-        }
-
-        .service-card:nth-child(2) .service-icon {
-            background: linear-gradient(135deg, #e8f5e9, #c8e6c9)
-        }
-
-        .service-card:nth-child(3) .service-icon {
-            background: linear-gradient(135deg, #e3f2fd, #bbdefb)
-        }
-
-        .service-card h3 {
-            font-size: 1.15rem;
-            font-weight: 700;
-            margin-bottom: 8px
-        }
-
-        .service-card .service-type {
-            font-size: .8rem;
-            color: var(--gray);
-            margin-bottom: 12px
-        }
-
-        .service-card p {
-            font-size: .9rem;
-            color: #475569;
-            line-height: 1.7
-        }
-
-        .service-card ul {
-            text-align: left;
-            list-style: none;
-            margin-top: 16px;
-            font-size: .88rem
-        }
-
-        .service-card ul li {
-            padding: 6px 0;
-            border-bottom: 1px solid #f1f5f9;
-            display: flex;
-            align-items: center;
-            gap: 8px
-        }
-
-        .service-card ul li::before {
-            content: '✓';
-            color: var(--accent);
-            font-weight: 700
-        }
-
-        /* ============ AGENT MERIT ============ */
-        .agent {
-            background: var(--light-bg)
-        }
-
-        .agent-benefits {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-            margin-bottom: 40px
-        }
-
-        .benefit-card {
-            background: #fff;
-            border-radius: 16px;
-            padding: 28px 24px;
-            display: flex;
-            gap: 16px;
-            align-items: flex-start;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, .04)
-        }
-
-        .benefit-card .benefit-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            background: var(--gradient-accent);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.4rem;
-            flex-shrink: 0
-        }
-
-        .benefit-card h3 {
-            font-size: 1.05rem;
-            font-weight: 700;
-            margin-bottom: 4px
-        }
-
-        .benefit-card p {
-            font-size: .88rem;
-            color: #64748b
-        }
-
-        /* ============ COUPON ============ */
-        .coupon {
-            background: var(--gradient-hero);
-            color: #fff;
-            text-align: center
-        }
-
-        .coupon .section-subtitle {
-            color: rgba(255, 255, 255, .6)
-        }
-
-        .coupon-box {
-            background: linear-gradient(135deg, rgba(240, 192, 64, .15), rgba(240, 192, 64, .05));
-            border: 2px solid rgba(240, 192, 64, .4);
-            border-radius: 24px;
-            padding: 48px 40px;
-            max-width: 700px;
-            margin: 0 auto
-        }
-
-        .coupon-box .original-price {
-            font-size: 1.1rem;
-            color: var(--gray);
-            text-decoration: line-through
-        }
-
-        .coupon-box .discount {
-            font-size: 1rem;
-            color: var(--gold);
-            margin: 8px 0
-        }
-
-        .coupon-box .new-price {
-            font-size: 3rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, var(--gold), #ffd700);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text
-        }
-
-        .coupon-box .bonus-tag {
-            display: inline-block;
-            background: rgba(0, 180, 216, .15);
-            border: 1px solid rgba(0, 180, 216, .3);
-            padding: 8px 20px;
-            border-radius: 10px;
-            margin-top: 16px;
-            font-size: .92rem
-        }
-
-        /* ============ STEPS ============ */
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-            max-width: 900px;
-            margin: 0 auto
-        }
-
-        .step-card {
-            text-align: center
-        }
-
-        .step-num {
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            background: var(--gradient-accent);
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.4rem;
-            font-weight: 900;
-            margin: 0 auto 16px
-        }
-
-        .step-card h3 {
-            font-size: 1.05rem;
-            font-weight: 700;
-            margin-bottom: 8px
-        }
-
-        .step-card p {
-            font-size: .88rem;
-            color: #64748b
-        }
-
-        /* ============ FAQ ============ */
-        .faq {
-            background: var(--light-bg)
-        }
-
-        .faq-list {
-            max-width: 750px;
-            margin: 0 auto
-        }
-
-        .faq-item {
-            background: #fff;
-            border-radius: 14px;
-            margin-bottom: 12px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, .04)
-        }
-
-        .faq-q {
-            padding: 20px 24px;
-            font-weight: 700;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 1rem
-        }
-
-        .faq-q::after {
-            content: '+';
-            font-size: 1.4rem;
-            color: var(--accent);
-            transition: transform .3s
-        }
-
-        .faq-item.open .faq-q::after {
-            transform: rotate(45deg)
-        }
-
-        .faq-a {
-            padding: 0 24px;
-            max-height: 0;
-            overflow: hidden;
-            transition: all .3s ease;
-            font-size: .92rem;
-            color: #64748b;
-            line-height: 1.8
-        }
-
-        .faq-item.open .faq-a {
-            padding: 0 24px 20px;
-            max-height: 300px
-        }
-
-        /* ============ FOOTER CTA ============ */
-        .footer-cta {
-            background: var(--gradient-hero);
-            color: #fff;
-            text-align: center;
-            padding: 80px 0
-        }
-
-        .footer-cta h2 {
-            font-size: 2rem;
-            font-weight: 900;
-            margin-bottom: 16px
-        }
-
-        .footer-cta p {
-            color: rgba(255, 255, 255, .65);
-            margin-bottom: 32px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto
-        }
-
-        .footer-cta .contact-info {
-            margin-top: 40px;
-            font-size: .88rem;
-            color: rgba(255, 255, 255, .5)
-        }
-
-        .footer-cta .contact-info a {
-            color: var(--accent);
-            text-decoration: none
-        }
-
-        /* ============ RESPONSIVE ============ */
-        @media(max-width:768px) {
-            .hero {
-                padding: 80px 0 60px;
-                min-height: auto
-            }
-
-            .hero h1 {
-                font-size: 1.8rem
-            }
-
-            .hero-stats {
-                gap: 24px
-            }
-
-            .problem-grid,
-            .solution-compare {
-                grid-template-columns: 1fr
-            }
-
-            .solution-grid,
-            .services-grid,
-            .steps-grid {
-                grid-template-columns: 1fr
-            }
-
-            .agent-benefits {
-                grid-template-columns: 1fr
-            }
-
-            .cashback-flow {
-                flex-direction: column
-            }
-
-            .cashback-arrow {
-                transform: rotate(90deg)
-            }
-
-            .compare-arrow {
-                transform: rotate(90deg)
-            }
-
-            .section {
-                padding: 56px 0
-            }
-        }
-
-        /* Animations */
-        .fade-up {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all .6s ease
-        }
-
-        .fade-up.visible {
-            opacity: 1;
-            transform: translateY(0)
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>代理店パートナー募集｜先制医療推進機構</title>
+<meta name="description" content="がん保険では死亡率は下がらない。予防ができる唯一のがん共済で、積み重なるストック型ビジネスを。先制医療推進機構の代理店パートナー募集。">
+<link rel="stylesheet" href="style_v6.css">
 </head>
-
 <body>
 
-    <!-- HERO -->
-    <section class="hero" id="top">
-        <div class="container">
-            <div class="hero-badge">先制医療推進機構 代理店パートナー募集</div>
-            <h1>がんを「見つけてから治す」時代は<br>もう終わりにしませんか？<span class="accent-line">見つかる前に守る、新しい医療のカタチ</span></h1>
-            <p>毎年届くがん検査キットで早期発見。万が一のときは保険でカバー。<br>しかも掛金は100%ポイント還元で実質タダ。<br>この革新的な仕組みを、一緒に届けるパートナーを募集しています。</p>
-            <a href="#coupon" class="btn btn-primary">今すぐ詳細を見る →</a>
-            <div class="hero-stats">
-                <div class="hero-stat">
-                    <div class="num">70%OFF</div>
-                    <div class="label">特別クーポンで登録料割引</div>
-                </div>
-                <div class="hero-stat">
-                    <div class="num">100%</div>
-                    <div class="label">掛金ポイント還元</div>
-                </div>
-                <div class="hero-stat">
-                    <div class="num">¥10,000</div>
-                    <div class="label">紹介ボーナス/1人</div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Header -->
+<header class="l-header" id="header">
+  <div class="l-header__inner">
+    <a href="#" class="c-brand">PMPO</a>
+    <div class="u-pc-only" style="display:flex; gap:1rem; align-items:center;">
+      <a href="#issues" style="font-weight:700;">課題</a>
+      <a href="#solution" style="font-weight:700;">解決策</a>
+      <a href="#strengths" style="font-weight:700;">強み</a>
+      <a href="#benefits" style="font-weight:700;">メリット</a>
+      <a href="https://lin.ee/ik3zEow" class="c-button c-button--line" target="_blank" style="padding: 0.5rem 1.5rem; font-size: 1rem;">LINEで無料相談</a>
+    </div>
+  </div>
+</header>
 
-    <!-- PROBLEM -->
-    <section class="problem section" id="problem">
-        <div class="container">
-            <div class="section-title fade-up">なぜ、今の医療保険では<br>あなたを守れないのか</div>
-            <div class="section-subtitle fade-up">多くの日本人が気づいていない、従来の医療保険の"構造的な欠陥"</div>
-            <div class="problem-grid">
-                <div class="problem-visual fade-up">
-                    <h4 style="margin-bottom:24px;font-size:1rem;color:rgba(255,255,255,.6)">従来の医療保険の流れ</h4>
-                    <div class="problem-flow">
-                        <div class="step"><span class="icon">🏥</span> 年に1回の健康診断を受ける</div>
-                        <div class="arrow">↓</div>
-                        <div class="step"><span class="icon">😰</span> 自覚症状が出てから精密検査</div>
-                        <div class="arrow">↓</div>
-                        <div class="step step-bad"><span class="icon">⚠️</span> ステージ3・4で がん発見（手遅れ）</div>
-                        <div class="arrow">↓</div>
-                        <div class="step step-bad"><span class="icon">💸</span> 高額な治療費 → ようやく保険適用</div>
-                    </div>
-                </div>
-                <div class="problem-text fade-up">
-                    <h3>「壊れてから修理する」仕組みに<br>お金を払い続けますか？</h3>
-                    <p>日本のがん検診受診率はわずか<strong>約40%</strong>。さらに、一般的な検診ではステージ0やステージ1のがんを見つけることは困難です。</p>
-                    <p>多くの場合、自覚症状が出てからの受診では<strong>ステージ3・4</strong>と診断され、5年生存率は大幅に低下します。</p>
-                    <p>従来の保険は「問題が起きてから」しか機能しません。<strong>これは構造的に間違っています。</strong></p>
-                    <div class="stat-box">
-                        <div class="big-num">約60%</div>
-                        <p style="margin-top:4px;font-weight:500">の日本人ががん検診を受けていない</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Hero Section -->
+<section class="p-hero">
+  <div class="l-container p-hero__inner">
+    <div class="p-hero__copy">
+      <span class="c-badge">日本初「がんリスク検査付き がん共済」</span>
+      <h1 class="text-huge p-hero__title">
+        積み重なっていく<br>ストックビジネスに<br>興味はありませんか？
+      </h1>
+      <p class="p-hero__lead">
+        がん保険市場2.7兆円。<br>保険業法の壁に守られたブルーオーシャンで、<br>他社が絶対に真似できないオンリーワンの共済を広める<br>代理店パートナーを募集しています。
+      </p>
+      <a href="https://lin.ee/ik3zEow" class="c-button c-button--line" target="_blank">LINEで無料相談する</a>
+    </div>
+    <div class="p-hero__visual">
+      <img src="hero_visual.png" alt="がんリスク検査付きがん共済 パートナー募集">
+    </div>
+  </div>
+  
+  <div class="l-container">
+    <div class="p-stats-row">
+      <div class="p-stat-box">
+        <span class="p-stat-box__label">パートナー登録数</span>
+        <span class="p-stat-box__num">11,139</span>
+        <span class="p-stat-box__unit">件突破</span>
+      </div>
+      <div class="p-stat-box">
+        <span class="p-stat-box__label">年間共済掛金</span>
+        <span class="p-stat-box__num">13.7</span>
+        <span class="p-stat-box__unit">億円</span>
+      </div>
+      <div class="p-stat-box">
+        <span class="p-stat-box__label">がん保険市場規模</span>
+        <span class="p-stat-box__num">2.7</span>
+        <span class="p-stat-box__unit">兆円</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- SOLUTION -->
-    <section class="solution section" id="solution">
-        <div class="container">
-            <div class="section-title fade-up" style="color:#fff">先制医療が、すべてを変える</div>
-            <div class="section-subtitle fade-up">「壊れる前に守る」＋「万が一の保険」。二重構造で大切な人を守ります。</div>
-            <div class="solution-grid">
-                <div class="solution-card fade-up">
-                    <div class="card-icon">🔬</div>
-                    <h3>毎年届くがん検査キット</h3>
-                    <p>検査キットには<strong>5-ALA（ファイブアラ）</strong>を使用。SBIの北尾吉孝氏が出資し、<strong>8年以上の研究実績</strong>を持つ先進物質です。脳腫瘍やがんの手術現場ですでに実用化されており、研究段階ではなく<strong>実際の医療に使われている技術</strong>。毎年届くALA-PDS検査で、ステージ0・1の段階でがんリスクをキャッチできます。
-                    </p>
-                </div>
-                <div class="solution-card fade-up">
-                    <div class="card-icon">🛡️</div>
-                    <h3>早期発見 × 保険のW保障</h3>
-                    <p>リスクを抑えながら、もし精密検査や治療が必要になった場合には保険が適用。予防と保障がセットになった革新的な仕組みです。</p>
-                </div>
-                <div class="solution-card fade-up">
-                    <div class="card-icon">💰</div>
-                    <h3>掛金100%ポイント還元</h3>
-                    <p>毎月の共済掛金は「さくらポイント」として100%還元。そのポイントで日用品が購入できるので、実質タダで守られます。</p>
-                </div>
-            </div>
-            <div class="solution-compare fade-up">
-                <div class="compare-box compare-old">
-                    <h4>❌ 従来の保険</h4>
-                    <p>問題が起きてから → 手遅れ状態で → 保険金で「修理」</p>
-                </div>
-                <div class="compare-arrow">→</div>
-                <div class="compare-box compare-new">
-                    <h4>✅ 先制医療</h4>
-                    <p>問題を未然に防ぐ仕組み → 早期発見 → さらに保険もプラス</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Issues -->
+<section class="l-section" id="issues">
+  <div class="l-container">
+    <div class="c-section-head">
+      <p class="text-brand u-bold font-en text-xl">ISSUES</p>
+      <h2 class="c-section-head__title">こんな課題を抱えていませんか？</h2>
+    </div>
+    
+    <div class="p-issues">
+      <div class="c-box p-issue-box">
+        <h3 class="p-issue-box__title u-bold">毎月リセットされる<br>フロー型営業の疲弊</h3>
+        <p class="text-base u-bold">どれだけ頑張っても月が変われば売上ゼロ。新規開拓に追われ続ける従来の営業モデルは、体力的にも精神的にも限界が来ます。</p>
+      </div>
+      <div class="c-box p-issue-box">
+        <h3 class="p-issue-box__title u-bold">がん保険の限界</h3>
+        <p class="text-base u-bold">がん保険で死亡率は下がりません。診断後にお金が出るだけで、予防には一切つながらない構造的な限界があります。</p>
+      </div>
+      <div class="c-box p-issue-box">
+        <h3 class="p-issue-box__title u-bold">新規事業のリスク</h3>
+        <p class="text-base u-bold">在庫リスク、トレンド依存、価格競争。多くの副業や新規事業はすぐにレッドオーシャンになり安定しません。</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- CASHBACK -->
-    <section class="cashback section" id="cashback">
-        <div class="container">
-            <div class="cashback-content fade-up">
-                <div class="cashback-badge">💡 驚きの仕組み</div>
-                <h2>毎月の掛金が100%戻ってくる<br>＝ 実質タダ</h2>
-                <p style="color:#92400e;max-width:600px;margin:0 auto">
-                    生命共済クローバーの掛金は、100%が「さくらポイント」として還元。還元されたポイントは提携通販サイトで日用品の購入に使えます。</p>
-                <div class="cashback-flow">
-                    <div class="cashback-step">
-                        <div class="step-icon">💳</div>
-                        <div class="step-label">毎月の掛金</div>
-                        <div class="step-value">お支払い</div>
-                    </div>
-                    <div class="cashback-arrow">→</div>
-                    <div class="cashback-step">
-                        <div class="step-icon">⭐</div>
-                        <div class="step-label">さくらポイント</div>
-                        <div class="step-value">100%還元</div>
-                    </div>
-                    <div class="cashback-arrow">→</div>
-                    <div class="cashback-step">
-                        <div class="step-icon">🛒</div>
-                        <div class="step-label">通販サイト</div>
-                        <div class="step-value">日用品購入</div>
-                    </div>
-                </div>
-                <p style="margin-top:24px;font-size:.88rem;color:#78350f">※生命共済クローバー加入時のポイント還元です</p>
-            </div>
+<!-- Solution -->
+<section class="l-section l-section--alt" id="solution">
+  <div class="l-container">
+    <div class="c-section-head">
+      <p class="text-brand u-bold font-en text-xl">SOLUTION</p>
+      <h2 class="c-section-head__title">先制医療推進機構のがん共済が、<br>すべてを変える</h2>
+      <p class="text-xl u-bold text-brand">「壊れてから修理する」保険から、「壊れる前に見つけて守る」共済へ。</p>
+    </div>
+    
+    <div class="p-solution">
+      
+      <div class="p-solution__item">
+        <div class="p-solution__content">
+          <span class="p-solution__number">01</span>
+          <h3>尿検査で「がんリスク」を早期発見<br>ALA-PDSスクリーニング</h3>
+          <p class="text-base u-bold">5-ALAを活用した独自の光線力学技術。がん細胞に特異的に蓄積するポルフィリンを尿中で検出し、自宅にいながら簡便にがんリスクを評価。従来の健康診断では見つけにくいステージ0〜1の段階でリスクを検知。</p>
+          <div class="p-solution__highlight">💡 従来のがん保険が「ハッキングされた後の損害保険」なのに対し、ALA-PDSは「人体のEDR（侵入検知システム）」です。</div>
         </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section class="section" id="services">
-        <div class="container">
-            <div class="section-title fade-up">充実の共済サービスラインナップ</div>
-            <div class="section-subtitle fade-up">がん、生命、法的トラブルまで。暮らしのリスクをトータルでカバー。</div>
-            <div class="services-grid">
-                <div class="service-card fade-up">
-                    <div class="service-icon">🌸</div>
-                    <h3>がん共済アイリス</h3>
-                    <div class="service-type">がんの早期発見と治療保障</div>
-                    <p>5-ALA（ファイブアラ）を用いた先進的な検査キット付き。治療費の実額保障で自己負担を軽減。</p>
-                    <ul>
-                        <li>5-ALA検査キットが毎年届く</li>
-                        <li>治療費の実額保障</li>
-                        <li>先進医療・自由診療にも対応</li>
-                        <li>予防費用保障あり</li>
-                    </ul>
-                </div>
-                <div class="service-card fade-up">
-                    <div class="service-icon">🍀</div>
-                    <h3>生命共済クローバー</h3>
-                    <div class="service-type">掛金100%ポイント還元</div>
-                    <p>将来の安心を確保しながら、掛金は全額ポイント還元。</p>
-                    <ul>
-                        <li>掛金100%さくらポイント還元</li>
-                        <li>死亡・高度障害保障</li>
-                        <li>幅広い年齢層に対応</li>
-                        <li>実質タダの生命保障</li>
-                    </ul>
-                </div>
-                <div class="service-card fade-up">
-                    <div class="service-icon">⚖️</div>
-                    <h3>弁護士費用共済ルピナス</h3>
-                    <div class="service-type">法的トラブルへの備え</div>
-                    <p>日常生活における法的トラブルに備え、弁護士費用をカバー。</p>
-                    <ul>
-                        <li>弁護士相談・費用の保障</li>
-                        <li>日常トラブル対応</li>
-                        <li>家族も安心の保障範囲</li>
-                        <li>リーズナブルな掛金</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="p-solution__visual">
+          <img src="images/pdf-tech.jpeg" alt="ALA-PDS Technology">
         </div>
-    </section>
-
-    <!-- AGENT MERIT -->
-    <section class="agent section" id="agent">
-        <div class="container">
-            <div class="section-title fade-up">代理店パートナーになるメリット</div>
-            <div class="section-subtitle fade-up">先制医療という新しい価値を届けながら、ビジネスとしても成長できる仕組み</div>
-            <div class="agent-benefits">
-                <div class="benefit-card fade-up">
-                    <div class="benefit-icon">💰</div>
-                    <div>
-                        <h3>紹介ボーナス 1人あたり¥10,000</h3>
-                        <p>新規代理店を1人紹介するごとにダイレクトボーナス10,000円。クーポン利用時でも同額。</p>
-                    </div>
-                </div>
-                <div class="benefit-card fade-up">
-                    <div class="benefit-icon">📦</div>
-                    <div>
-                        <h3>スターターキット付き</h3>
-                        <p>登録時にビジネスに必要なスターターキットとALA-PDS検査セットが届きます。</p>
-                    </div>
-                </div>
-                <div class="benefit-card fade-up">
-                    <div class="benefit-icon">🌐</div>
-                    <div>
-                        <h3>共済販売 + パートナー募集</h3>
-                        <p>共済サービスの販売に加え、代理店・先制医療パートナーの募集活動も可能。</p>
-                    </div>
-                </div>
-                <div class="benefit-card fade-up">
-                    <div class="benefit-icon">📈</div>
-                    <div>
-                        <h3>ユニレベル報酬体系</h3>
-                        <p>チームの成長に応じた報酬体系で、継続的な収入構築が可能です。</p>
-                    </div>
-                </div>
-            </div>
+      </div>
+      
+      <div class="p-solution__item">
+        <div class="p-solution__content">
+          <span class="p-solution__number">02</span>
+          <h3>検査から精密検査・治療まで<br>一気通貫の共済保証</h3>
+          <p class="text-base u-bold">スクリーニングでリスクが検出された場合、DWIBS（全身MRI）等の精密検査費用を共済で保証。「発見して終わり」ではなく「発見から治療まで」をワンストップでカバーする唯一のフレームワーク。</p>
+          <div class="p-solution__highlight">💡 さくら労働組合を活用した共済スキームにより、保険業法の規制を受けずに「予防ができるがん共済」という世界初のカテゴリを実現。</div>
         </div>
-    </section>
-
-    <!-- COUPON -->
-    <section class="coupon section" id="coupon">
-        <div class="container">
-            <div class="section-title fade-up" style="color:#fff">🎁 3月度 特別クーポンキャンペーン</div>
-            <div class="section-subtitle fade-up">今なら代理店登録料が大幅割引！期間限定のチャンスをお見逃しなく。</div>
-            <div class="coupon-box fade-up">
-                <div class="original-price">通常登録料：¥49,500（税込）</div>
-                <div class="discount">▼ 特別クーポンで 34,650円OFF</div>
-                <div class="new-price">¥14,850</div>
-                <p style="margin-top:8px;font-size:.92rem;color:rgba(255,255,255,.7)">で代理店登録が可能！</p>
-                <div class="bonus-tag">✨ クーポン利用でも紹介ボーナス ¥10,000 は変わりません</div>
-                <p style="margin-top:20px;font-size:.85rem;color:rgba(255,255,255,.45)">※有効期限：2026年3月31日まで ／
-                    スターターキットも通常通り届きます</p>
-            </div>
-            <div style="margin-top:32px" class="fade-up">
-                <a href="#contact" class="btn btn-gold">クーポンで登録する →</a>
-            </div>
+        <div class="p-solution__visual">
+          <img src="images/one-stop.jpeg" alt="One stop protection">
         </div>
-    </section>
-
-    <!-- STEPS -->
-    <section class="section" id="steps">
-        <div class="container">
-            <div class="section-title fade-up">代理店登録は3ステップ</div>
-            <div class="section-subtitle fade-up">シンプルな手順で、すぐに活動を始められます</div>
-            <div class="steps-grid">
-                <div class="step-card fade-up">
-                    <div class="step-num">1</div>
-                    <h3>お問い合わせ</h3>
-                    <p>下記のフォームまたはLINEからお問い合わせください。クーポンコードをお伝えします。</p>
-                </div>
-                <div class="step-card fade-up">
-                    <div class="step-num">2</div>
-                    <h3>代理店登録</h3>
-                    <p>登録フォームにクーポンコードを入力し、代理店登録を完了。登録料は14,850円に割引されます。</p>
-                </div>
-                <div class="step-card fade-up">
-                    <div class="step-num">3</div>
-                    <h3>活動開始</h3>
-                    <p>スターターキットが届いたら、すぐに共済の紹介・代理店募集の活動を始められます。</p>
-                </div>
-            </div>
+      </div>
+      
+      <div class="p-solution__item">
+        <div class="p-solution__content">
+          <span class="p-solution__number">03</span>
+          <h3>解約されにくい<br>ストック型収益モデル</h3>
+          <p class="text-base u-bold">「自分の命を守る保障」を自ら解約する人は極めて少なく、驚異的な継続率を誇ります。一度獲得したパートナーの紹介が、毎月の安定収益として積み上がり続けるストックビジネスです。</p>
+          <div class="p-solution__highlight">💡 毎月リセットされるフロー型から、安定して積み上がるストック型へ。営業スタイルのパラダイムシフト。</div>
         </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq section" id="faq">
-        <div class="container">
-            <div class="section-title fade-up">よくある質問</div>
-            <div class="faq-list fade-up">
-                <div class="faq-item">
-                    <div class="faq-q">先制医療とは何ですか？</div>
-                    <div class="faq-a">
-                        先制医療とは、病気の症状が出る前の段階からバイオマーカー等を利用して将来のリスクを予測し、早期に予防・介入する新しい医療の考え方です。従来の「病気になってから治療する」アプローチとは根本的に異なります。
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-q">代理店登録にはどんな条件がありますか？</div>
-                    <div class="faq-a">
-                        代理店登録費用（通常49,500円、クーポン利用時14,850円）のお支払い、がん共済アイリスへの加入（自身または親族と合計12,000円以上）が報酬受取の条件となります。</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-q">掛金100%ポイント還元とは？</div>
-                    <div class="faq-a">
-                        生命共済クローバーに加入すると、毎月の掛金に対して100%の「さくらポイント」が付与されます。このポイントは提携通販サイトで日用品の購入に使用でき、実質的に掛金が戻ってくる仕組みです。
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-q">がん経験者でも代理店になれますか？</div>
-                    <div class="faq-a">はい。先制医療推進機構ではがん経験者の社会復帰を応援しています。がん経験者は登録費用14,850円のみで代理店登録が可能で、報酬受取に加入条件もありません。
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-q">特別クーポンはどのように使えますか？</div>
-                    <div class="faq-a">
-                        クーポンはご紹介する新規代理店候補者にお渡しいただきます。その方が代理店登録フォームでクーポンコードを入力すると、登録費用が49,500円から14,850円に割引されます。ご自身の登録には使用できません。
-                    </div>
-                </div>
-            </div>
+        <div class="p-solution__visual">
+          <img src="images/stock-model.jpeg" alt="Stock Revenue Model">
         </div>
-    </section>
+      </div>
+      
+    </div>
+  </div>
+</section>
 
-    <!-- FOOTER CTA -->
-    <section class="footer-cta" id="contact">
-        <div class="container fade-up">
-            <h2>先制医療という新しい価値を、<br>一緒に届けませんか？</h2>
-            <p>がんを「見つけてから治す」のではなく、「見つかる前に守る」。この革新的な仕組みを必要としている人が、まだたくさんいます。</p>
-            <a href="#" id="line-cta" class="btn btn-primary">LINEで問い合わせる →</a>
-            <div class="contact-info">
-                <p style="margin-top:24px">紹介者：坂下たかひろ</p>
-                <p style="margin-top:4px; font-size:.82rem; color:rgba(255,255,255,.4)">※ LINEからお気軽にご連絡ください</p>
-            </div>
+<!-- Strengths -->
+<section class="l-section" id="strengths">
+  <div class="l-container">
+    <div class="c-section-head">
+      <p class="text-brand u-bold font-en text-xl">COMPETITIVE MOAT</p>
+      <h2 class="c-section-head__title">他社が絶対に真似できない<br>2つの圧倒的な参入障壁</h2>
+    </div>
+    
+    <div class="p-strengths">
+      <div class="p-strength-box c-box">
+        <h3>保険業法の壁</h3>
+        <p class="text-base u-bold">がん保険市場は約2.7兆円規模ですが、保険業法により大手保険会社は「予防」を保険に組み込めません。共済スキームだからこそ実現できるこのモデルは、法律そのものが巨大な参入障壁となっています。</p>
+      </div>
+      <div class="p-strength-box c-box">
+        <h3>100%ポイント還元特許</h3>
+        <p class="text-base u-bold">共済掛金の100%をP-WALKポイントで還元するスキームはビジネスモデル特許取得済み。組合員は実質「掛け捨てゼロ」で共済保障を受けられます。法的に保護されておりコピー不可能です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Benefits -->
+<section class="l-section l-section--alt" id="benefits">
+  <div class="l-container">
+    <div class="c-section-head">
+      <p class="text-brand u-bold font-en text-xl">PARTNER BENEFITS</p>
+      <h2 class="c-section-head__title">代理店パートナーが得られる<br>5つの強烈なメリット</h2>
+    </div>
+    
+    <div class="p-features">
+      <div class="c-box p-feature-box">
+        <div class="p-feature-box__icon">🥇</div>
+        <h3 class="text-xl u-bold">オンリーワン製品</h3>
+        <p class="text-base u-bold">競合が存在しない唯一無二のがん共済</p>
+      </div>
+      <div class="c-box p-feature-box">
+        <div class="p-feature-box__icon">📦</div>
+        <h3 class="text-xl u-bold">在庫ゼロ</h3>
+        <p class="text-base u-bold">在庫もトレンドリスクも一切なし</p>
+      </div>
+      <div class="c-box p-feature-box">
+        <div class="p-feature-box__icon">💯</div>
+        <h3 class="text-xl u-bold">掛金100%還元</h3>
+        <p class="text-base u-bold">ポイント還元で実質掛け捨てゼロ</p>
+      </div>
+      <div class="c-box p-feature-box">
+        <div class="p-feature-box__icon">💰</div>
+        <h3 class="text-xl u-bold">ダイレクト報酬</h3>
+        <p class="text-base u-bold">1人紹介ごとに10,000円の報酬</p>
+      </div>
+      <div class="c-box p-feature-box">
+        <div class="p-feature-box__icon">🤝</div>
+        <h3 class="text-xl u-bold">社会貢献</h3>
+        <p class="text-base u-bold">がん死亡率を下げる事業に参画</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Voice -->
+<section class="l-section" id="voice">
+  <div class="l-container">
+    <div class="c-section-head">
+      <h2 class="c-section-head__title">すでに圧倒的な成果を出している<br>パートナーの声</h2>
+    </div>
+    
+    <div class="p-voice">
+      <div class="c-box p-voice-box">
+        <p>「保険営業を20年やってきましたが、がん保険では本当の意味でお客様を守れないというジレンマを抱えていました。この共済に出会って、初めて自信を持って勧められる商品を手にしました。」</p>
+        <div class="p-voice-box__meta">
+          <div class="p-voice-box__avatar">K</div>
+          <div>
+            <p class="text-base u-bold">K.Sさん</p>
+            <p class="text-sm">元保険営業・50代</p>
+          </div>
         </div>
-    </section>
+      </div>
+      <div class="c-box p-voice-box">
+        <p>「IT企業の経営者として、福利厚生の一環で社員に導入したのがきっかけです。月額3,850円で年間10万円以上の可処分所得向上効果。採用面接でも差別化ポイントになっています。」</p>
+        <div class="p-voice-box__meta">
+          <div class="p-voice-box__avatar">M</div>
+          <div>
+            <p class="text-base u-bold">M.Tさん</p>
+            <p class="text-sm">IT企業経営者・40代</p>
+          </div>
+        </div>
+      </div>
+      <div class="c-box p-voice-box">
+        <p>「副業として始めましたが、半年で本業の収入を超えました。何より"毎月リセット"されないストック収入なので、精神的な安定感が全く違います。」</p>
+        <div class="p-voice-box__meta">
+          <div class="p-voice-box__avatar">Y</div>
+          <div>
+            <p class="text-base u-bold">Y.Hさん</p>
+            <p class="text-sm">会社員（副業）・30代</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script>
-        // Scroll animation
-        const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target) } }) }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-        // FAQ toggle
-        document.querySelectorAll('.faq-q').forEach(q => { q.addEventListener('click', () => { const item = q.parentElement; item.classList.toggle('open') }) });
-    </script>
+<!-- Steps -->
+<section class="l-section l-section--alt" id="steps">
+  <div class="l-container">
+    <div class="c-section-head">
+      <h2 class="c-section-head__title">代理店パートナー登録の流れ</h2>
+      <p class="text-xl u-bold text-brand">最短3分で登録完了。今なら初期費用が完全無料になるクーポンをご用意。</p>
+    </div>
+    
+    <div class="p-steps">
+      <div class="p-step-item">
+        <div class="p-step-item__num">01</div>
+        <div class="p-step-item__content">
+          <h3 class="u-bold">LINEでお問い合わせ</h3>
+          <p class="text-base u-bold">まずはLINEで友だち追加。気になることは何でもお気軽にご質問ください。</p>
+        </div>
+      </div>
+      <div class="p-step-item">
+        <div class="p-step-item__num">02</div>
+        <div class="p-step-item__content">
+          <h3 class="u-bold">オンライン説明会に参加</h3>
+          <p class="text-base u-bold">事業の全体像、収益モデル、ALA-PDS技術について詳しくご説明します。</p>
+        </div>
+      </div>
+      <div class="p-step-item">
+        <div class="p-step-item__num">03</div>
+        <div class="p-step-item__content">
+          <h3 class="u-bold">代理店パートナー登録</h3>
+          <p class="text-base u-bold">専用フォームから登録。通常14,850円の初期費用が、無料クーポンで0円に。</p>
+        </div>
+      </div>
+      <div class="p-step-item">
+        <div class="p-step-item__num">04</div>
+        <div class="p-step-item__content">
+          <h3 class="u-bold">研修・サポート</h3>
+          <p class="text-base u-bold">専用の研修プログラムと営業資料で、未経験でも安心してスタートできます。</p>
+        </div>
+      </div>
+      <div class="p-step-item">
+        <div class="p-step-item__num">05</div>
+        <div class="p-step-item__content">
+          <h3 class="u-bold">ストック収益の積み上げ開始</h3>
+          <p class="text-base u-bold">紹介するたびに積み上がる継続収益。解約率の低さが、安定した収入基盤を構築します。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="p-final-cta">
+  <div class="p-final-cta__box">
+    <h2 class="text-navy u-bold" style="font-size:clamp(2rem, 5vw, 4rem); margin-bottom:1rem; color:var(--color-navy);">
+      がんの死亡率を<br><span class="text-brand">本気で下げる</span>側へ。
+    </h2>
+    <p class="text-xl u-bold" style="margin-bottom: 3rem; color:var(--color-navy);">
+      保険業法の壁に守られた、競合不在のブルーオーシャン。<br>あなたのビジネスに、積み上がり続けるストック収益を。
+    </p>
+    <div style="max-width: 500px; margin: 0 auto;">
+      <a href="https://lin.ee/ik3zEow" class="c-button c-button--line" target="_blank" style="margin-bottom:1rem; width:100%; display:flex; justify-content:center; align-items:center;">
+        LINEで無料相談する
+      </a>
+      <a href="https://member.pmpo.co.jp/200037801" class="c-button" target="_blank" style="background:#fff; color:var(--color-brand); border:3px solid var(--color-brand); width:100%; box-shadow:none;">
+        代理店登録はこちら →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="l-footer">
+  <div class="l-container">
+    <a href="#" class="c-brand" style="color:#fff; display:block; margin-bottom:1rem;">PMPO</a>
+    <p style="font-size:0.875rem; color:#94a3b8;">&copy; 先制医療推進機構 All Rights Reserved.</p>
+  </div>
+</footer>
+
 </body>
-
 </html>
